@@ -3,7 +3,6 @@ import React, { PropTypes } from 'react';
 const styles = require('./ActionBar.scss');
 
 export default function ActionBar({ load, reset }) {
-  console.log(styles);
   return (
     <div className={`row ${styles['action-bar']}`}>
       <div className="col-md-12">

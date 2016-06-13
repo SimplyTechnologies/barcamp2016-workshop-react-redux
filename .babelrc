@@ -4,23 +4,7 @@
   "plugins": [
     "transform-runtime",
     "add-module-exports",
-    "transform-decorators-legacy"
-  ],
-
-  "env": {
-    "development": {
-      "plugins": [
-        ["react-transform", {
-          "transforms": [{
-            "transform": "react-transform-catch-errors",
-            "imports": ["react", "redbox-react"]
-          }, {
-            "transform": "react-transform-hmr",
-            "imports": ["react"],
-            "locals": ["module"]
-          }]
-        }]
-      ]
-    }
-  }
+    "transform-decorators-legacy",
+    "react-hot-loader/babel"
+  ]
 }

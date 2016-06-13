@@ -1,31 +1,20 @@
-const Express = require('express');
 const webpack = require('webpack');
-
-const config = require('./src/config');
+const WebpackDevServer = require('webpack-dev-server');
 const webpackConfig = require('./webpack.config');
-const compiler = webpack(webpackConfig);
+const port = require('./src/config').port;
 
-const port = config.port;
-
-const serverOptions = {
-  quiet: true,
-  noInfo: true,
-  hot: true,
-  inline: true,
-  lazy: false,
+new WebpackDevServer(webpack(webpackConfig), {
   publicPath: webpackConfig.output.publicPath,
-  stats: { colors: true },
-};
-
-const app = new Express();
-
-app.use(require('webpack-dev-middleware')(compiler, serverOptions));
-app.use(require('webpack-hot-middleware')(compiler));
-
-app.listen(port, (err) => {
+  hot: true,
+  historyApiFallback: true,
+  stats: {
+    colors: true,
+  },
+  silent: true,
+}).listen(port, 'localhost', (err) => {
   if (err) {
-    console.error(err);
-  } else {
-    console.info('==> 🚧  Webpack development server listening on port %s', port);
+    console.log(err);
   }
+
+  console.log('Listening at localhost:', port);
 });

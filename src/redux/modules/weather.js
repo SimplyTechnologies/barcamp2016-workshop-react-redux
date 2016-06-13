@@ -1,13 +1,13 @@
-const LOAD = 'weather_now/weather/LOAD';
-const LOAD_SUCCESS = 'weather_now/weather/LOAD_SUCCESS';
-const LOAD_FAIL = 'weather_now/weather/LOAD_FAIL';
-const RESET = 'weather_now/weather/RESET';
+export const LOAD = 'weather_now/weather/LOAD';
+export const LOAD_SUCCESS = 'weather_now/weather/LOAD_SUCCESS';
+export const LOAD_FAIL = 'weather_now/weather/LOAD_FAIL';
+export const RESET = 'weather_now/weather/RESET';
 
 const initialState = {
   loaded: false,
 };
 
-export default function info(state = initialState, action = {}) {
+export default function (state = initialState, action = {}) {
   switch (action.type) {
     case LOAD:
       return {
