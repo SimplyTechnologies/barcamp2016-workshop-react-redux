@@ -1,5 +1,6 @@
 const config = require('./src/config');
 const path = require('path');
+const autoprefixer = require('autoprefixer');
 
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -9,6 +10,9 @@ module.exports = {
   entry: {
     main: [
       `webpack-hot-middleware/client?path=http://${config.host}:${config.port}/__webpack_hmr`,
+      'tether',
+      'font-awesome-loader',
+      'bootstrap-loader',
       './src/app.js',
     ],
   },
@@ -42,9 +46,14 @@ module.exports = {
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin(),
+    new webpack.ProvidePlugin({
+      'window.Tether': 'tether',
+    }),
     new HtmlWebpackPlugin({
       template: './src/index.html',
       inject: true,
     }),
   ],
+  postcss: [autoprefixer],
+
 };
