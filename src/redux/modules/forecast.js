@@ -1,7 +1,7 @@
-export const LOAD = 'weather_now/weather/LOAD';
-export const LOAD_SUCCESS = 'weather_now/weather/LOAD_SUCCESS';
-export const LOAD_FAIL = 'weather_now/weather/LOAD_FAIL';
-export const RESET = 'weather_now/weather/RESET';
+export const LOAD = 'weather_now/forecast/LOAD';
+export const LOAD_SUCCESS = 'weather_now/forecast/LOAD_SUCCESS';
+export const LOAD_FAIL = 'weather_now/forecast/LOAD_FAIL';
+export const RESET = 'weather_now/forecast/RESET';
 
 const initialState = {
   loaded: false,
@@ -50,10 +50,10 @@ export function load({ lat, lng }) {
   };
 }
 
-export function loadSuccess(weather) {
+export function loadSuccess(forecast) {
   return {
     type: LOAD_SUCCESS,
-    result: weather,
+    result: forecast,
   };
 }
 

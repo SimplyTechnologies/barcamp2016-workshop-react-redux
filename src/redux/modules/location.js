@@ -4,6 +4,9 @@ export const GET_LOCATION_FAIL = 'weather_now/location/GET_LOCATION_FAIL';
 
 const initialState = {
   loaded: false,
+  loading: false,
+  error: '',
+  data: null,
 };
 
 export default function (state = initialState, action = {}) {

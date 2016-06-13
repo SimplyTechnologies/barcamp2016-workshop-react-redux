@@ -12,14 +12,13 @@ export default function configureStore(initialState = {}) {
     window.devToolsExtension ? window.devToolsExtension() : f => f
   ));
 
+  sagaMiddleware.run(sagas);
+
   if (module.hot) {
     module.hot.accept('./modules/reducer', () => {
       store.replaceReducer(require('./modules/reducer')); // eslint-disable-line
     });
   }
-
-
-  sagaMiddleware.run(sagas);
 
   return store;
 }

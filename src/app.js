@@ -4,6 +4,8 @@ import Root from 'components/Root/Root';
 import configureStore from 'redux/create';
 import { AppContainer } from 'react-hot-loader';
 
+const icons = require('./resources/weather-icons.scss');
+console.log(icons);
 
 const store = configureStore();
 

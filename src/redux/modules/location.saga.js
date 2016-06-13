@@ -10,7 +10,6 @@ function* getLocation() {
     const location = yield call(getCurrentLocation);
     yield put(getLocationSuccess(location));
   } catch (e) {
-    console.log(e.stack);
     yield put(getLocationFail(e.toString()));
   }
 }
