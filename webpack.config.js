@@ -1,5 +1,6 @@
 const config = require('./src/config');
 const path = require('path');
+const autoprefixer = require('autoprefixer');
 
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -8,7 +9,11 @@ module.exports = {
   devtool: 'inline-source-map',
   entry: {
     main: [
-      `webpack-hot-middleware/client?path=http://${config.host}:${config.port}/__webpack_hmr`,
+      'react-hot-loader/patch',
+      'webpack-dev-server/client?http://localhost:3000',
+      'webpack/hot/only-dev-server',
+      'font-awesome-loader',
+      'bootstrap-loader',
       './src/app.js',
     ],
   },
@@ -41,10 +46,14 @@ module.exports = {
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin(),
+    new webpack.ProvidePlugin({
+      'window.Tether': 'tether',
+    }),
     new HtmlWebpackPlugin({
       template: './src/index.html',
       inject: true,
     }),
   ],
+  postcss: [autoprefixer],
+
 };

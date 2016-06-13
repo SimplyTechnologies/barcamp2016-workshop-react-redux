@@ -1,9 +1,28 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { render } from 'react-dom';
+import Root from 'components/Root/Root';
+import configureStore from 'redux/create';
+import { AppContainer } from 'react-hot-loader';
 
-import Main from 'Main';
 
-ReactDOM.render(
-  (<Main />),
+const store = configureStore();
+
+render(
+  <AppContainer>
+    <Root store={store} />
+  </AppContainer>,
   document.getElementById('container')
 );
+
+if (module.hot) {
+  module.hot.accept('./components/Root/Root', () => {
+    const Root = require('./components/Root/Root'); // eslint-disable-line
+    render(
+      <AppContainer>
+        <Root store={store} />
+      </AppContainer>,
+      document.getElementById('container')
+    );
+  });
+}
+
