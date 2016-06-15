@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from 'react-dom';
-import Root from 'components/Root/Root';
+import { Root } from 'components';
 import configureStore from 'redux/create';
 import { AppContainer } from 'react-hot-loader';
 

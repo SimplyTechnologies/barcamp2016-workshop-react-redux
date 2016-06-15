@@ -1,5 +1,7 @@
 import React, { PropTypes } from 'react';
-import LoadInfo from 'components/LoadInfo/LoadInfo';
+import { LoadInfo } from 'components';
+
+const styles = require('./Location.scss');
 
 function LocationInfo({ lat, lng }) {
   return (
@@ -16,6 +18,7 @@ LocationInfo.propTypes = {
   lng: PropTypes.number.isRequired,
 };
 
+
 export default function Location(props) {
   const {
     getLocation,
@@ -23,7 +26,7 @@ export default function Location(props) {
   } = props;
 
   return (
-    <div className="row">
+    <div className={`row ${styles.location}`}>
       <div className="col-md-6">
         <button
           className="btn btn-success"

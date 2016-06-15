@@ -1,6 +1,5 @@
 import React, { PropTypes } from 'react';
-import LoadInfo from 'components/LoadInfo/LoadInfo';
-import WeatherCard from './WeatherCard';
+import { LoadInfo, WeatherCard } from 'components';
 
 export default function Forecast({ loading, loaded, error, forecast }) {
   return (
@@ -10,8 +9,8 @@ export default function Forecast({ loading, loaded, error, forecast }) {
 
         <div className="row">
              {loaded && forecast.list.map((w, i) => (
-               <div className="col-md-3">
-                 <WeatherCard key={i} weather={w} showDate />
+               <div key={i} className="col-md-3">
+                 <WeatherCard weather={w} showDate />
                </div>
              ))}
         </div>

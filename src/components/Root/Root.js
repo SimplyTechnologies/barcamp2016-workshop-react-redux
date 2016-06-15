@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 import { Provider } from 'react-redux';
-import Index from 'components/Index/Index';
+import { Index } from 'components';
 
 export default function Root({ store }) {
   return (

@@ -1,6 +1,5 @@
 import React, { PropTypes } from 'react';
-import LoadInfo from 'components/LoadInfo/LoadInfo';
-import WeatherCard from './WeatherCard';
+import { LoadInfo, WeatherCard } from 'components';
 
 export default function Weather({ loading, loaded, error, weather }) {
   return (

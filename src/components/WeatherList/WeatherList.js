@@ -1,7 +1,6 @@
 import React from 'react';
 
-import Weather from './Weather.container';
-import Forecast from './Forecast.container';
+import { Weather, Forecast } from 'components';
 
 export default function WeatherList() {
   return (

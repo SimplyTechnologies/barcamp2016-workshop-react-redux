@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 
-const styles = require('./Card.scss');
+const styles = require('./WeatherCard.scss');
 
 export default function WeatherCard({ weather, showDate }) {
   return (
