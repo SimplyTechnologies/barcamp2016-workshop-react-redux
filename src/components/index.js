@@ -7,3 +7,4 @@ export Weather from './Weather/Weather.container';
 export Forecast from './Forecast/Forecast.container';
 export WeatherCard from './WeatherCard/WeatherCard';
 export WeatherList from './WeatherList/WeatherList';
+export WeatherChart from './WeatherChart/WeatherChart.container';

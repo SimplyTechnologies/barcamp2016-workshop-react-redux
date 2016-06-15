@@ -48,6 +48,7 @@
   "dependencies": {
     "bootstrap": "^4.0.0-alpha.2",
     "classnames": "^2.2.5",
+    "d3": "^3.5.17",
     "font-awesome": "^4.6.3",
     "isomorphic-fetch": "^2.2.1",
     "moment": "^2.13.0",

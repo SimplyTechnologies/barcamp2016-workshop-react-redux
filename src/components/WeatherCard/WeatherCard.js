@@ -6,7 +6,7 @@ export default function WeatherCard({ weather, showDate }) {
   return (
     <div className={`card ${styles.card}`}>
       <h3 className="card-header">
-          {showDate ? weather.date : `${weather.city}, ${weather.country}`}
+          {showDate ? weather.dateFormatted : `${weather.city}, ${weather.country}`}
       </h3>
       <div className="card-block">
         {!showDate && <h4 className="card-title">Now</h4>}

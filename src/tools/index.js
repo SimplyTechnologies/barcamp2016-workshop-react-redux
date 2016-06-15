@@ -52,7 +52,8 @@ class Weather {
     this.sunrise = data.sys.sunrise && moment(data.sys.sunrise, 'X').format('kk:mm');
     this.sunset = data.sys.sunset && moment(data.sys.sunset, 'X').format('kk:mm');
 
-    this.date = data.dt && moment(data.dt, 'X').format('MMM D, kk:mm');
+    this.date = data.dt && moment(data.dt, 'X').toDate();
+    this.dateFormatted = data.dt && moment(data.dt, 'X').format('MMM D, kk:mm');
   }
 }
 

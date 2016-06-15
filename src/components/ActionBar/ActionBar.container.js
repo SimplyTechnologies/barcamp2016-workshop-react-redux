@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 
-import { load as loadWeather, reset } from 'redux/modules/weather';
-import { load as loadForecast } from 'redux/modules/forecast';
+import { load as loadWeather, reset as resetWeather } from 'redux/modules/weather';
+import { load as loadForecast, reset as resetForecast } from 'redux/modules/forecast';
 import ActionBar from './ActionBar';
 
 
@@ -9,6 +9,7 @@ function loadData(dispatch, location) {
   dispatch(loadWeather(location));
   dispatch(loadForecast(location));
 }
+
 
 function mapStateToProps(state) {
   return {
@@ -19,7 +20,10 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    reset: () => dispatch(reset),
+    reset: () => {
+      dispatch(resetWeather());
+      dispatch(resetForecast());
+    },
     load: loadData.bind(null, dispatch),
   };
 }
