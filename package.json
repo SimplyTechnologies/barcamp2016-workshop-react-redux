@@ -6,7 +6,8 @@
   "scripts": {
     "start": "npm run dev",
     "dev": "NODE_ENV=development node webpack-dev-sever",
-    "lint": "eslint -c .eslintrc src --fix"
+    "lint": "eslint -c .eslintrc src --fix",
+    "test": "NODE_PATH=.:./src NODE_ENV=test mocha --compilers js:babel-core/register --require ./src/init.test.js ./src/**/test/*.js"
   },
   "author": "",
   "license": "ISC",
@@ -36,6 +37,7 @@
     "file-loader": "^0.8.5",
     "font-awesome-loader": "0.0.1",
     "html-webpack-plugin": "^2.20.0",
+    "mocha": "^2.5.3",
     "node-sass": "^3.7.0",
     "postcss-loader": "^0.9.1",
     "resolve-url-loader": "^1.4.3",

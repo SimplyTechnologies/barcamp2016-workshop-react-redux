@@ -5,7 +5,7 @@ import { GET_LOCATION, getLocationSuccess, getLocationFail } from './location';
 import { getCurrentLocation } from 'tools';
 
 
-function* getLocation() {
+export function* getLocation() {
   try {
     const location = yield call(getCurrentLocation);
     yield put(getLocationSuccess(location));
