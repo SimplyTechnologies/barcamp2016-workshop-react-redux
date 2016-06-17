@@ -13,5 +13,5 @@ function* loadForecast({ payload: { lat, lng } }) {
 }
 
 export function* watchForecastLoad() {
-  yield takeEvery(LOAD, loadForecast);
+  yield* takeEvery(LOAD, loadForecast);
 }

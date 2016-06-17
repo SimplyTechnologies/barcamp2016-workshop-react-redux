@@ -13,5 +13,5 @@ function* loadWeather({ payload: { lat, lng } }) {
 }
 
 export function* watchWeatherLoad() {
-  yield takeEvery(LOAD, loadWeather);
+  yield* takeEvery(LOAD, loadWeather);
 }

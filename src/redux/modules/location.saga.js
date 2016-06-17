@@ -15,5 +15,5 @@ export function* getLocation() {
 }
 
 export function* watchLocationGet() {
-  yield takeEvery(GET_LOCATION, getLocation);
+  yield* takeEvery(GET_LOCATION, getLocation);
 }
